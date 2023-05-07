@@ -1,4 +1,3 @@
-FROM openjdk:8
-EXPOSE 8080
-ADD target/docker_jk_integration.jar docker_jk_integration.jar
-ENTRYPOINT ["java", "-jar", "/docker_jk_integration.jar"]
+FROM httpd:2.4
+ 
+COPY ./public-html/ /usr/local/apache2/htdocs/
